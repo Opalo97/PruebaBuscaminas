@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         char[] tablero;
+        char elementos = 0;
         int extensionTablero;
         Scanner entrada = new Scanner(System.in);
 
@@ -14,7 +15,7 @@ public class Main {
         extensionTablero = pedirNumeroDeExtension(entrada, 5, 15,"¿Cuánta extension quieres que tenga el tablero? [De 5 a 15]: ");
         System.out.println();
 
-       // tablero = generarTablero();
+        tablero = generarTablero(elementos);
 
     }
 
@@ -22,7 +23,7 @@ public class Main {
         char[] tablero = new char[elementos];
 
         for (int i = 0; i < tablero.length; i++){
-           // tablero = (int)(Math.random() * 1 );
+            elementos = (int)(Math.random() * 1);
         }
 
         return tablero;
