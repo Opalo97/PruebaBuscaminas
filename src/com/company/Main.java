@@ -17,13 +17,19 @@ public class Main {
 
         tablero = generarTablero(elementos);
 
+
     }
 
     private static char[] generarTablero(int elementos){
         char[] tablero = new char[elementos];
 
         for (int i = 0; i < tablero.length; i++){
-            elementos = (int)(Math.random() * 1);
+            elementos = (int)(Math.random() * 1 + 1);
+        }
+        if (elementos == 0) {
+            elementos = '*';
+        } else if (elementos == 1) {
+            elementos = ' ';
         }
 
         return tablero;
