@@ -20,7 +20,23 @@ public class Main {
     }
 
     private static void mostrarTablero(char[] tablero) {
-        System.out.println(tablero);
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print("+---");
+        }
+        System.out.println("+");
+
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print("|");
+            System.out.print(" " + tablero[i] + " ");
+        }
+        System.out.print("|");
+        System.out.println();
+
+        for (int i = 0; i < tablero.length; i++) {
+            System.out.print("+---");
+        }
+        System.out.println("+");
+       // System.out.println(tablero); System.out.println("+---");  System.out.print("|");
     }
 
     private static char[] generarTablero(int tam){
@@ -36,12 +52,16 @@ public class Main {
             }
         }
 
-
         for (int i = 0; i < tablero.length; i++) {
-            if (tablero[0] == '0') {
-                bombas = 0;
-            }
-            if (tablero[i] == '0') {
+            if (i == 0) {
+                if (tablero[i] == '0' && tablero[i + 1] == '*') {
+                    tablero[i] = '1';
+                }
+            } else if (i == tablero.length  - 1) {
+                if (tablero[i] == '0' && tablero[i - 1] == '*') {
+                    tablero[i] = '1';
+                }
+            } else if (tablero[i] == '0') {
                 bombas = 0;
                 if (tablero[i - 1] == '*') {
                     bombas++;
